@@ -1,0 +1,13 @@
+from django.db import models
+
+# Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=100,primary_key=True)
+    numberOfVisits = models.IntegerField()
+    numberOfLikes = models.IntegerField()
+
+class Page(models.Model):
+    category = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    url = models.URLField(primary_key=True)
+    view = models.IntegerField()
